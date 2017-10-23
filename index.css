@@ -15,3 +15,27 @@ div {
 #center {
     height: auto;
 }
+
+#nav {
+    text-decoration: none; 
+    color: #530000;
+    font-size: 1.5vmax;
+}
+
+#nav:hover {
+    color: #c2a5a5;
+}
+
+#nav_sub {
+    text-decoration: none; 
+    color: #530000;
+    font-size: 1vmax;
+}
+
+#nav_sub:hover {
+    color: #c2a5a5;
+}
+
+#dropdown {
+    padding-left: 5%;
+}
