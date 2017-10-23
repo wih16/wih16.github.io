@@ -1,0 +1,17 @@
+
+#portrait {
+    max-width: 100%;
+    padding: 5%;
+}
+
+body {
+    background-color: #e5e5e7;
+}
+
+div {
+    background-color: white;
+}
+
+#center {
+    height: auto;
+}
