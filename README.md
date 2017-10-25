@@ -3,4 +3,4 @@
 ## WORK IN PROGRESS
 
 Known errors 
-* Formatting incorrect on Google Chrome
+* ~~Formatting incorrect on Google Chrome~~
