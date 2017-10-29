@@ -8,7 +8,8 @@ master color 2: #c2a5a5
 }
 
 body {
-    background-color: #e5e5e7;
+    background-color: #c2a5a5;
+    font-family: "Bookman Old Style"
 }
 
 div {
@@ -16,14 +17,13 @@ div {
 }
 
 #center {
-    height: auto;
     margin-top: 50px;
 }
 
 #nav {
     text-decoration: none; 
     color: #530000;
-    font-size: 100%;
+    font-size: 1.5vmax;
 }
 
 #nav:hover {
@@ -56,10 +56,8 @@ div {
     position: relative;
 }
 
-
-
 #s_h_text {
-    font-size: 3vmax;
+    font-size: 4vmax;
     width: 50%;
     position: absolute;
     left: 25%;
@@ -73,16 +71,11 @@ div {
     background: -moz-linear-gradient(left, #530000, #ffffff); /* For Firefox 3.6 to 15 */
     background: linear-gradient(left, #530000, #ffffff); /* Standard syntax */
     position: relative; 
-    height: 5vh;
-}
-
-#education {
-    height: auto;
-    position: relative;
+    height: 3.5vmax;
 }
 
 #school {
-    font-size: 3.5vh;
+    font-size: 2.5vmax;
     position: absolute;
     height: 97%; 
     background-color: #ffffff;
@@ -91,12 +84,44 @@ div {
 
 #information {
     padding: 5px;
-    position: absolute;
-    width: 97.5%; 
-    left: 2.5%; 
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+#info_title {
+    font-size: 2vmax;
+    font-style: italic;
 }
 
 #info {
-    font-size: 3vh;
-    font-style: italic;
+    list-style-type: none;
+}
+
+#orgs {
+    list-style-type: none;
+}
+
+ul.education {
+    font-size: 1.2vmax;
+    border-left: solid 5px #c2a5a5;
+}
+
+ul.education li {
+    padding: 5px;
+}
+
+#awards {
+    list-style-type: none;
+}
+
+#courses {
+    list-style-type: none;
+}
+
+#top {
+    min-height:10vmax;
+}
+
+#top_text {
+    min-height: 5vmax;
 }

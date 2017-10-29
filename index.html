@@ -9,16 +9,16 @@
     <body> 
         <div class="container">
             <div class="row" style="height: 1.5vmax;">
-                <div class="col-sm-12" style="background-color: #e5e5e7;">
+                <div class="col-sm-12" style="background-color: #c2a5a5;">
                     
                 </div>
             </div>
-            <div class="row">
+            <div class="row" id="top">
                 <div class="col-sm-2 text-center">
                     <img src="20170328_102545.jpg" id="portrait">
                     
                 </div>
-                <div class="col-sm-10 text-center"> 
+                <div class="col-sm-10 text-center" id="top_text"> 
                     <div class="col-sm-12" id="name"> 
                         <!-- Name Header -->
                     </div>
@@ -28,8 +28,8 @@
                     </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-sm-2 col-sm-offset-1">
+            <div class="row" id="main_row">
+                <div class="col-sm-2 col-sm-offset-1 bottom-row">
                     <div class="navbar navbar-fixed-left">
                       <ul class="nav navbar-nav">
                         <li><a href="" id="nav">Education</a></li>
@@ -47,7 +47,7 @@
                       </ul>
                     </div>
                 </div>
-                <div class="col-sm-10">
+                <div class="col-sm-10 bottom-row">
                     <div id="center">
                         <!--Shown when the education tab is selected-->
                         <div id="education"> 
@@ -57,10 +57,33 @@
                                 </h1>
                             </div>
                             <div id="information">
-                                <h3 id="info"> 
+                                <h3 id="info_title"> 
                                    Information: 
                                 </h3>
-                            
+                                <ul id="info" class="education">
+                                    <li><span class="info_labels" id="major">Major: <span id="major_blank"> </span></span></li>
+                                    <li><span class="info_labels" id="minor">Minor: <span id="minor_blank"> </span></span></li>
+                                    <li><span class="info_labels" id="gpa">GPA: <span id="gpa_blank"> </span></span></li>
+                                    <li><span class="info_labels" id="m_gpa">Major GPA: <span id="m_gpa_blank"> </span></span></li>
+                                </ul>
+                                <h3 id="info_title"> 
+                                   Organizations: 
+                                </h3>
+                                <ul id="orgs" class="education">
+                                    
+                                </ul>
+                                <h3 id="info_title"> 
+                                   Honors and Awards: 
+                                </h3>
+                                <ul id="awards" class="education">
+                                    
+                                </ul>
+                                <h3 id="info_title"> 
+                                   Relevant Coursework: 
+                                </h3>
+                                <ul id="courses" class="education">
+                                    
+                                </ul>
                             </div>
                         </div>
                     </div>

@@ -43,10 +43,36 @@ window.onload = function(){
     };
     
     document.getElementById("school").innerHTML = education.info.school;
+    document.getElementById("major_blank").innerHTML = education.info.major[0];
+    document.getElementById("minor_blank").innerHTML = education.info.minor[0]; 
+    document.getElementById("gpa_blank").innerHTML = education.info.gpa.toString();
+    document.getElementById("m_gpa_blank").innerHTML = education.info.m_gpa.toString();
+    
+    var orgs = education.orgs;
+    var list = document.getElementById("orgs");
+    for(var i = 0; i < orgs.length; i++){
+        var item = document.createElement('li');
+        item.appendChild(document.createTextNode(orgs[i]));
+        list.appendChild(item);
+    }
+    var awards = education.awards;
+    var list = document.getElementById("awards");
+    for(var i = 0; i < awards.length; i++){
+        var item = document.createElement('li');
+        item.appendChild(document.createTextNode(awards[i]));
+        list.appendChild(item);
+    }
+    var course_list = education.courses;
+    var list = document.getElementById("courses");
+    for(var i = 0; i < course_list.length; i++){
+        var item = document.createElement('li');
+        item.appendChild(document.createTextNode(course_list[i].name));
+        list.appendChild(item);
+    }
 };
 
 function createCourses(){
-    var courses:Array<Course>;
+    var courses:Array<Course> = new Array();
     var course_list:Array<string> = getCourses(); 
     for(var i = 0; i < course_list.length; i++){
         var course:Course; 
@@ -55,6 +81,7 @@ function createCourses(){
             description: course_list[i++],
             gpa: course_list[i]
         };
+        courses.push(course);
     }
     return courses;
 }
