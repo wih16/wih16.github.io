@@ -67,10 +67,37 @@ window.onload = function(){
     for(var i = 0; i < course_list.length; i++){
         var item = document.createElement('li');
         item.appendChild(document.createTextNode(course_list[i].name));
+        item.className = "course_item"; 
+        var item_2 = document.createElement('li');
+        item_2.appendChild(document.createTextNode(course_list[i].description));
+        var item_3 = document.createElement('li');
+        item_3.appendChild(document.createTextNode("Grade: " + course_list[i].gpa));
+        var classname = course_list[i].name.split(" ").join("_")
+        item_2.className += classname;
+        item_2.className += " hide";
+        item_2.style.fontStyle = "italic";
+        item_3.className += classname;
+        item_3.className += " hide";
+        item.appendChild(item_2);
+        item.appendChild(item_3);
         list.appendChild(item);
     }
 };
 
+document.getElementsByTagName("body")[0].addEventListener('click', function(e){
+    if(e.srcElement.className == "course_item"){
+        var classname = e.srcElement.innerHTML.split("<")[0].split(" ").join("_");
+        if((<HTMLElement> document.getElementsByClassName(classname)[0]).style.display === "block"){
+            (<HTMLElement> document.getElementsByClassName(classname)[0]).style.display = "none";
+            (<HTMLElement> document.getElementsByClassName(classname)[1]).style.display = "none";
+        }
+        else{
+            (<HTMLElement> document.getElementsByClassName(classname)[0]).style.display = "block";
+            (<HTMLElement> document.getElementsByClassName(classname)[1]).style.display = "block";
+        }
+        e.srcElement.childNodes[0]
+    }
+})
 function createCourses(){
     var courses:Array<Course> = new Array();
     var course_list:Array<string> = getCourses(); 
@@ -123,4 +150,22 @@ function getCourses(){
     return course_list;
 }
 
+var current;
+
+$(document).ready(function(){
+    current = $("#education");
+    $("#education_button").click(function(){
+        if(current != "#education"){
+            $(current).css("display", "none");
+            $("#education").css("display", "block");
+        }
+    });
+    $("#work_button").click(function(){
+        if(current != "#work"){
+            $(current).css("display", "none");
+            $("#work").css("display", "block");
+            current = $('#work');
+        }
+    });
+});
 

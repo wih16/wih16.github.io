@@ -26,9 +26,7 @@ div {
     font-size: 1.5vmax;
 }
 
-#nav:hover {
-    color: #c2a5a5;
-}
+
 
 #nav_sub {
     text-decoration: none; 
@@ -103,7 +101,7 @@ div {
 
 ul.education {
     font-size: 1.2vmax;
-    border-left: solid 5px #c2a5a5;
+    border-left: solid 5px #530000;
 }
 
 ul.education li {
@@ -124,4 +122,31 @@ ul.education li {
 
 #top_text {
     min-height: 5vmax;
+}
+.course_item:hover{
+    background-color: #530000;
+    color: #ffffff;
+    cursor: pointer;
+    
+}
+.hide{
+    display: none;
+}
+
+.li_nav {
+    text-decoration: none;
+    border-bottom: 3px solid transparent;    
+    transition: 0.5s ease;
+    width: 0px;
+    white-space: nowrap;
+    text-decoration: none; 
+    color: #530000;
+    font-size: 1.5vmax;
+}
+
+
+.li_nav:hover {
+    border-bottom: 3px solid #c2a5a5;
+    width: 100%;
+    cursor: pointer;
 }
