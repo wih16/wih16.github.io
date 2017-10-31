@@ -41,7 +41,7 @@ window.onload = function(){
         awards: ["Outside the Classroom Curriculum", "Dean's List", "Pitt Advantage Grant"],
         courses: courses
     };
-    
+
     document.getElementById("school").innerHTML = education.info.school;
     document.getElementById("major_blank").innerHTML = education.info.major[0];
     document.getElementById("minor_blank").innerHTML = education.info.minor[0]; 
@@ -153,16 +153,21 @@ function getCourses(){
 var current;
 
 $(document).ready(function(){
+    $("#work").css("display", "none");
+    $("#technical").css("display", "none");
     current = $("#education");
-    $("#education_button").click(function(){
+    $("#education_button").click(function(e){
         if(current != "#education"){
-            $(current).css("display", "none");
+            $("#s_h_text").html("Education");
+            current.css("display", "none");
             $("#education").css("display", "block");
+            current = $("#education");
         }
     });
     $("#work_button").click(function(){
         if(current != "#work"){
-            $(current).css("display", "none");
+            $("#s_h_text").html("Work");
+            current.css("display", "none");
             $("#work").css("display", "block");
             current = $('#work');
         }

@@ -122,16 +122,21 @@ function getCourses() {
 }
 var current;
 $(document).ready(function () {
+    $("#work").css("display", "none");
+    $("#technical").css("display", "none");
     current = $("#education");
-    $("#education_button").click(function () {
+    $("#education_button").click(function (e) {
         if (current != "#education") {
-            $(current).css("display", "none");
+            $("#s_h_text").html("Education");
+            current.css("display", "none");
             $("#education").css("display", "block");
+            current = $("#education");
         }
     });
     $("#work_button").click(function () {
         if (current != "#work") {
-            $(current).css("display", "none");
+            $("#s_h_text").html("Work");
+            current.css("display", "none");
             $("#work").css("display", "block");
             current = $('#work');
         }
