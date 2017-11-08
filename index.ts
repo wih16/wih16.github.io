@@ -23,6 +23,15 @@ interface Education{
     courses: Array<Course>;
 }
 
+/*Information about a skill*/
+interface Skill{
+    title: string; 
+    years: number;
+    months: number; 
+    projects: Array<string>; 
+}
+
+/* Open the education section first*/
 window.onload = function(){
     var info: Information; 
     var education: Education;
@@ -82,8 +91,11 @@ window.onload = function(){
         item.appendChild(item_3);
         list.appendChild(item);
     }
+    
+    fillSkills();
 };
 
+/*Click to trigger course dropdown option*/
 document.getElementsByTagName("body")[0].addEventListener('click', function(e){
     if(e.srcElement.className == "course_item"){
         var classname = e.srcElement.innerHTML.split("<")[0].split(" ").join("_");
@@ -98,6 +110,8 @@ document.getElementsByTagName("body")[0].addEventListener('click', function(e){
         e.srcElement.childNodes[0]
     }
 })
+
+/* Creates the list of courses*/
 function createCourses(){
     var courses:Array<Course> = new Array();
     var course_list:Array<string> = getCourses(); 
@@ -113,6 +127,7 @@ function createCourses(){
     return courses;
 }
 
+/*Stores the list of course information*/
 function getCourses(){
     var course_list:Array<string> = ["Intermediate Programming with Java",
     "This course is a rigorous introduction to the fundamental concepts and techniques of computer programming using the Java programming language.",
@@ -150,11 +165,14 @@ function getCourses(){
     return course_list;
 }
 
+
+/* Stores the currently opened tab */
 var current;
 
+/*Handles the change in open tab*/
 $(document).ready(function(){
     $("#work").css("display", "none");
-    $("#technical").css("display", "none");
+    $("#skills").css("display", "none");
     current = $("#education");
     $("#education_button").click(function(e){
         if(current != "#education"){
@@ -172,5 +190,84 @@ $(document).ready(function(){
             current = $('#work');
         }
     });
+    $("#skills_button").click(function(){
+        if(current != "#skills"){
+            $("#s_h_text").html("Skills");
+            current.css("display", "none");
+            $("#skills").css("display", "block");
+            current = $('#skills');
+        }
+    });
 });
 
+function fillSkills(){
+    var skills = document.getElementById("skills");
+    var skillsList:Array<Skill> = createSkills(); 
+    for(var i = 0; i < skillsList.length; i++){
+        var div = document.createElement("div");
+        div.style.display = "inline-block";
+        div.style.height = "auto";
+        div.style.verticalAlign = "top";
+        var list = document.createElement("ul");
+        list.className += "no_bullet"
+        var item = document.createElement('li');
+        item.className += "skill_type";
+        item.appendChild(document.createTextNode(skillsList[i].title));
+        var item2 = document.createElement('ul');
+        item2.className += "skill_type_list"; 
+        item2.className += " no_bullet"
+        var time = document.createElement('li');
+        if(skillsList[i].years != 0){
+            time.innerHTML += "Years: ";
+            var total = skillsList[i].years;
+            if(skillsList[i].months != 0){
+                total += (skillsList[i].months / 12);
+                time.innerHTML += total.toString();
+            }
+            else{
+                time.innerHTML += total.toString();
+            }
+        }
+        else if(skillsList[i].months != 0){
+            time.innerHTML += "Months: " + skillsList[i].months.toString();
+        }
+        item2.appendChild(time);
+        var item3 = document.createElement('li');
+        item3.appendChild(document.createTextNode("Projects:"));
+        var item4 = document.createElement('ul');
+        item4.className += "project_type_list"; 
+        for(var j = 0; j < skillsList[i].projects.length; j++){
+            var item5 = document.createElement('li'); 
+            item5.appendChild(document.createTextNode(skillsList[i].projects[j]));
+            item4.appendChild(item5);
+        }   
+        item3.appendChild(item4);
+        item2.appendChild(item3);
+        list.appendChild(item);
+        list.appendChild(item2);
+        div.appendChild(list);
+        skills.appendChild(div);
+    }
+    
+}
+
+function createSkills(){
+    var skillsList:Array<Skill> = new Array();
+    var skillsArray:Array<string> = getSkills();
+    for(var i = 0; i < skillsArray.length; i++){
+        var skill:Skill;
+        skill = {
+            title: skillsArray[i++],
+            years: Math.floor(parseInt(skillsArray[i]) / 12),
+            months: parseInt(skillsArray[i++]) % 12,
+            projects: skillsArray[i].split(", ")
+        }
+        skillsList.push(skill);
+    }
+    return skillsList;
+}
+
+function getSkills(){
+    var skillsList:Array<string> = ["Java", "36", "School, Personal, Hackathon, Internship", "HTML/CSS", "24", "Personal, Hackathon, Internship",  "JavaScript", "18", "Personal, Hackathon",  "Bootstrap", "12", "Personal, Hackathon",  "C/C++", "12", "School", "Python", "12", "School, Personal", "SQL", "6", "Personal", "MySQL", "6", "Personal", "JUnit/Mockito", "6", "School", "Selenium", "3", "School", "Eclipse IDE", "3", "Internship", "Eclipse GUI Development", "3", "Internship", "Emacs", "36", "School, Personal, Hackathon", "Brackets", "12", "Personal, Hackathon", "RPAExpress", "3", "Internship", "Sketch", "6", "Personal", "Agile Methodology", "3", "School"]
+    return skillsList;
+}

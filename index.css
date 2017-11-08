@@ -180,3 +180,25 @@ ul.education li {
     border-left: solid 5px #530000;
     list-style-type: none;
 }
+
+#skills_list {
+    list-style-type: none;
+}
+
+.no_bullet{
+    list-style-type: none;
+}
+.skill_type{
+    font-size: 20px;
+    font-style: italic;
+}
+.skill_type_list{
+    border-left: solid 5px #530000;
+    padding: 5px;
+    margin: 0;
+}
+.project_type_list{
+    padding: 0 0 0 10px;
+    margin: 0;
+    list-style-type: none;
+}
