@@ -238,7 +238,11 @@ function fillSkills(){
         item4.className += "project_type_list"; 
         for(var j = 0; j < skillsList[i].projects.length; j++){
             var item5 = document.createElement('li'); 
-            item5.appendChild(document.createTextNode(skillsList[i].projects[j]));
+            item5.style.color = "#530000";
+            var item6 = document.createElement('span');
+            item6.style.color = "#000";
+            item6.appendChild(document.createTextNode(skillsList[i].projects[j]));
+            item5.appendChild(item6);
             item4.appendChild(item5);
         }   
         item3.appendChild(item4);

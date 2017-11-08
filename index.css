@@ -200,5 +200,5 @@ ul.education li {
 .project_type_list{
     padding: 0 0 0 10px;
     margin: 0;
-    list-style-type: none;
+    list-style-type: square;
 }
