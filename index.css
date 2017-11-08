@@ -2,6 +2,16 @@
 master color 1: #530000
 master color 2: #c2a5a5
 */
+@media only screen and (max-width: 570px) {
+    .li_nav {
+        font-size: 20px;
+    }
+}
+@media only screen and (min-width: 570px) {
+    .li_nav {
+        font-size: 1.5vmax;
+    }
+}
 #portrait {
     max-width: 100%;
     padding: 5%;
@@ -19,14 +29,6 @@ div {
 #center {
     margin-top: 50px;
 }
-
-#nav {
-    text-decoration: none; 
-    color: #530000;
-    font-size: 1.5vmax;
-}
-
-
 
 #nav_sub {
     text-decoration: none; 
@@ -141,7 +143,6 @@ ul.education li {
     white-space: nowrap;
     text-decoration: none; 
     color: #530000;
-    font-size: 1.5vmax;
 }
 
 
